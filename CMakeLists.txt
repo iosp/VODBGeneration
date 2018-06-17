@@ -11,11 +11,12 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   cv_bridge
   image_transport
-  fcl
+  fcl_catkin
 )
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
+# find_package(fcl REQUIRED)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
