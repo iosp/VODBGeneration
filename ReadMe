@@ -1,3 +1,17 @@
+==== ROS Kinetic  ====
+Package build with catkin build in ~/ws:
+catkin build Image_Generation_VisOdo
+Environment setup: 
+source ~/ws/devel_cb/setup.bash
+Edit Image_Generation_VisOdo/scripts/make_db.sh file in order to configure proper path(es).
+Run smartest scenario (based on ros/gazebo)
+Run Image_Generation_VisOdo by using: rosrun Image_Generation_VisOdo make_db
+
+
+
+
+
+VVVVV SAGI VALD VVVVVVVVVVVVVVVVVVVVVVVV
 ~ Commands to Activate ~
 
 

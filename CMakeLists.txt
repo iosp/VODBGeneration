@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(Image_Generation_VisOdo)
 
+SET(CMAKE_CXX_FLAGS "-g -std=c++0x")
+
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
@@ -13,6 +15,8 @@ find_package(catkin REQUIRED COMPONENTS
   image_transport
   fcl_catkin
 )
+
+find_package(OpenCV REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -98,12 +102,14 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 # include_directories(include)
-include_directories(
-  ${catkin_INCLUDE_DIRS}
-)
+include_directories(include ${catkin_INCLUDE_DIRS}
+/usr/include/eigen3 /opt/ros/kinetic/include/opencv-3.3.1 /opt/ros/kinetic/include/opencv-3.3.1-dev)
+#include_directories(
+#  ${catkin_INCLUDE_DIRS}
+#)
 
 add_executable(Image_Generation_VisOdo src/Image_Generation.cpp)
-target_link_libraries(Image_Generation_VisOdo ${catkin_LIBRARIES})
+target_link_libraries(Image_Generation_VisOdo ${catkin_LIBRARIES} ${OpenCV_LIBS})
 
 ## Declare a cpp library
 # add_library(Image_Generation_VisOdo

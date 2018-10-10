@@ -4,7 +4,7 @@
 #include <iostream> // Strings
 #include <image_transport/image_transport.h> // Getting Image from camera sensor
 // OpenCV , CV Bridge
-#include <opencv2/highgui/highgui.hpp> 
+#include <opencv2/highgui.hpp>
 #include <cv_bridge/cv_bridge.h>
 // Gazebo Model 
 #include "gazebo_msgs/SetModelState.h" 
@@ -99,7 +99,7 @@ void imageCallback(const sensor_msgs::ImageConstPtr& msg)
     cv::imwrite(cr.str(), im_roi); // end cropping and saving
     cv::rectangle(im_roi,cv::Point(i,j),cv::Point(k,l),cv::Scalar(0,0,255),1); // adding red rectangle bracket
     cv::imwrite("rect/"+cr.str(), im_roi); // saving with bracket
-	cv::imshow("view",im_roi); // showing image
+    cv::imshow("view",im_roi); // showing image
     cv::waitKey(30);
   }
   catch (cv_bridge::Exception& e)
