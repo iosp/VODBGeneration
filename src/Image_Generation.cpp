@@ -124,13 +124,13 @@ int main(int argc, char** argv)
 	pp_c.call(getphysicsproperties);//getphysicsproperties now holds the current properties
 	//create your desired model state and call the /gazebo/set_model_state service here
 	gazebo_msgs::GetModelState gcs,gos; //gcs - Get Camera State , gos - Get Obstacle State
-	gcs.request.model_name="flea3";
+        gcs.request.model_name="flea3"; //This camera is started by the script make_db.sh
 	gos.request.model_name="obstacle_on_path0"; // object0 - first object not on path, obstacle_on_path0 first object on path
 	ros::ServiceClient gms_c = n.serviceClient<gazebo_msgs::GetModelState>("/gazebo/get_model_state");
 	gms_c.call(gcs);//gcs now holds the current state
 	gms_c.call(gos);
   
-	// Initializing Variabels Randomly Around the chosen object
+        // Initializing Variables Randomly Around the chosen object
 	fcl::Quaternion3f q;
 	r = RandomFloat(10,40);Theta=-PI/2;theta=RandomFloat((0*PI)/180,(PI*20)/180);phi=RandomFloat(0,2*PI);
         // Calculating chosen object frame

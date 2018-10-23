@@ -1,11 +1,21 @@
 ==== ROS Kinetic  ====
-Package build with catkin build in ~/ws:
+This package runs in conjunction with smartest: $robil2/src/3party/smartest
+
+==== BUILD ===
 catkin build Image_Generation_VisOdo
-Environment setup: 
+
+=== ENVIRONMENT SETUP ===
 source ~/ws/devel_cb/setup.bash
 Edit Image_Generation_VisOdo/scripts/make_db.sh file in order to configure proper path(es).
-Run smartest scenario (based on ros/gazebo)
+
+=== RUN ===
+Run smartest scenario (based on ros/gazebo):
+For example, generate and run 10 scenarios: roslaunch smartest runMultipleScenario_robil2_tracked.launch n:=10
 Run Image_Generation_VisOdo by using: rosrun Image_Generation_VisOdo make_db
+
+The images are in tree4 by default.
+
+
 
 
 
